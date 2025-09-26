@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png'; 
 import cart from '../assets/cart_icon.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menu ,setMenu] = useState("shop")
