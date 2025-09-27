@@ -1,49 +1,91 @@
-.hero{
+.hero {
     height: 100vh;
     background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
     display: flex;
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
 }
-.hero-left{
-    flex: 1;
+
+/* LEFT SIDE */
+.hero-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 180px;
-    line-height: 1.1;
-    gap: 20px;
+    gap: 10px;
+    max-width: 50%;
 }
-.hero-left h2{
+
+.hero-left h2 {
     color: #909090;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
-.hero-left p{
-    color: #171717;
-    font-size: 100px;
-    font-weight: 700;
-}
-.hero-hand-icon{
+
+/* Title with hand icon */
+.hero-title {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+}
 
+.hero-title p {
+    font-size: 90px;
+    font-weight: 700;
+    color: #171717;
 }
-.hero-hand-icon img{
-    width: 105px    ;
+
+.hero-title img {
+    width: 80px;
 }
-.hero-latest-button{
+
+/* Big text below */
+.hero-collections {
+    font-size: 90px;
+    font-weight: 700;
+    color: #171717;
+    margin-top: -20px;
+}
+
+.hero-for-everyone {
+    font-size: 90px;
+    font-weight: 700;
+    color: #171717;
+    margin-top: -20px;
+}
+
+/* Button */
+.hero-latest-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #ff4141;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 18px 30px;
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero-latest-button:hover {
+    background: #e63a3a;
+}
+
+/* RIGHT SIDE IMAGE */
+.hero-right img {
+    max-width: 500px;
+    width: 100%;
+    object-fit: contain;
+}
+.hero-right {
+flex: 1;
 display: flex;
-justify-content: center;
 align-items: center;
-gap: 15px;
-width: 310px;
-height: 70px;
-border-radius: 75px;
-margin-top: 30px;
-background: #ff4141;
-color: white;
-font-size: 22px;
-font-weight: 500;
+justify-content: center;
 
 }
