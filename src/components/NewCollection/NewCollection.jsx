@@ -1,7 +1,7 @@
-import React from 'react'
-import './NewCollection.css'
-import new_collections from '../assets/new_collections'
-import Item from '../Item/Item'
+import React from "react";
+import "./NewCollection.css";
+import new_collections from "../assets/new_collections";
+import Item from "../Item/Item";
 
 const NewCollection = () => {
   return (
@@ -11,7 +11,8 @@ const NewCollection = () => {
         {new_collections.map((item) => (
           <Item
             key={item.id}
-            name={item.name}  // ✅ ADD THIS LINE
+            id={item.id}
+            name={item.name}
             image={item.image}
             new_price={item.new_price}
             old_price={item.old_price}
@@ -19,7 +20,7 @@ const NewCollection = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewCollection
+export default NewCollection;
