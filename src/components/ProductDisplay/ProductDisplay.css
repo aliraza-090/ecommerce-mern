@@ -3,12 +3,14 @@
   gap: 40px;
   margin: 50px 100px;
   font-family: 'Poppins', sans-serif;
+  flex-wrap: wrap; /* ✅ allow wrapping on small screens */
 }
 
 .productdisplay-left {
   flex: 1;
   display: flex;
   gap: 20px;
+  min-width: 280px;
 }
 
 .productdisplay-img-list {
@@ -41,6 +43,7 @@
 
 .productdisplay-main-img {
   width: 400px;
+  max-width: 100%; /* ✅ scale down on smaller screens */
   height: auto;
   border-radius: 10px;
   object-fit: cover;
@@ -51,6 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 280px;
 }
 
 .productdisplay-right h1 {
@@ -94,7 +98,7 @@
   line-height: 1.5;
 }
 
-.product-display-right-size h1 {
+.productdisplay-right-size h1 {
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -102,6 +106,7 @@
 .productdisplay-right-size {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap; /* ✅ allow sizes to wrap */
 }
 
 .productdisplay-right-size div {
@@ -139,4 +144,72 @@ button:hover {
 
 .productdisplay-right-category span {
   font-weight: 600;
+}
+
+/* -------------------- RESPONSIVE MEDIA QUERIES -------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .productdisplay {
+    margin: 40px 50px;
+    gap: 30px;
+  }
+  .productdisplay-main-img {
+    width: 300px;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .productdisplay {
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 20px;
+  }
+  .productdisplay-left {
+    flex-direction: row;
+    gap: 15px;
+  }
+  .productdisplay-main-img {
+    width: 100%;
+    max-width: 350px;
+  }
+  .productdisplay-right h1 {
+    font-size: 20px;
+  }
+  .productdisplay-right-prices {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .productdisplay {
+    margin: 20px 10px;
+    gap: 20px;
+  }
+  .productdisplay-main-img {
+    width: 100%;
+    max-width: 280px;
+  }
+  .productdisplay-right h1 {
+    font-size: 18px;
+  }
+  .productdisplay-right-prices {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .productdisplay-right-size div {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+  .productdisplay-right-category {
+    font-size: 13px;
+  }
 }

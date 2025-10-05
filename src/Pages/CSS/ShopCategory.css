@@ -5,6 +5,7 @@
   padding: 20px 5%;
 }
 
+/* Banner */
 .category-banner {
   width: 100%;
   border-radius: 12px;
@@ -13,6 +14,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Index / Sort */
 .shop-category-indexSort {
   display: flex;
   justify-content: space-between;
@@ -20,6 +22,11 @@
   margin-bottom: 20px;
   font-size: 1rem;
   color: #333;
+  flex-wrap: wrap;
+}
+
+.shop-category-indexSort span {
+  font-weight: 500;
 }
 
 .shop-categorySort {
@@ -35,7 +42,7 @@
   height: 14px;
 }
 
-/* ✅ PRODUCT GRID - 4 items per row */
+/* Product Grid */
 .shopcategory-products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -43,7 +50,6 @@
   margin-top: 20px;
 }
 
-/* Individual product cards (from <Item />) */
 .shopcategory-products > * {
   background: #fff;
   border-radius: 10px;
@@ -57,25 +63,7 @@
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ✅ Responsive Layout */
-@media (max-width: 1024px) {
-  .shopcategory-products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .shopcategory-products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .shopcategory-products {
-    grid-template-columns: 1fr;
-  }
-}
-/* ✅ Style for Explore More Button */
+/* Explore More Button */
 .explore-more-container {
   display: flex;
   justify-content: center;
@@ -83,10 +71,10 @@
 }
 
 .explore-more-btn {
-  background-color: #ff4c24; /* Your preferred color */
+  background-color: #ff4c24;
   color: white;
-  font-size: 14px; /* Adjust size */
-  padding: 8px 18px; /* Adjust spacing */
+  font-size: 14px;
+  padding: 8px 18px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -96,4 +84,53 @@
 .explore-more-btn:hover {
   background-color: #e04320;
   transform: scale(1.05);
+}
+
+/* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .shopcategory-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .shopcategory-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .shop-category-indexSort {
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+  .shop-categorySort img {
+    width: 12px;
+    height: 12px;
+  }
+  .explore-more-btn {
+    font-size: 13px;
+    padding: 7px 16px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .shopcategory-products {
+    grid-template-columns: 1fr;
+  }
+  .shop-category-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  .shop-categorySort img {
+    width: 10px;
+    height: 10px;
+  }
+  .explore-more-btn {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
 }
