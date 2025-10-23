@@ -1,0 +1,181 @@
+/* 🌐 Base container */
+.list-product {
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🏷️ Heading */
+.list-product h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #222;
+}
+
+/* 📋 Header row */
+.listproduct-header {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1.5fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 12px 0;
+  background-color: #f9fafb;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* 📦 Each product row */
+.listproduct-row {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1.5fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s ease;
+}
+
+.listproduct-row:hover {
+  background-color: #fafafa;
+}
+
+/* 🖼️ Product image */
+.listproduct-row img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+/* ❌ Remove button */
+.listproduct-remove-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.listproduct-remove-btn:hover {
+  background-color: #d62828;
+  transform: scale(1.05);
+}
+
+/* 🚫 No products message */
+.no-products {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+  color: #777;
+}
+
+/* 🔳 Scrollable area for small screens */
+.listproduct-all {
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* 🧭 Responsive Design */
+
+/* 📱 For tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .listproduct-header,
+  .listproduct-row {
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .listproduct-header p:nth-child(3),
+  .listproduct-row p:nth-child(3) {
+    display: none; /* hide product name to fit space */
+  }
+
+  .list-product h2 {
+    font-size: 24px;
+  }
+}
+
+/* 📱 For smaller tablets (≤768px) */
+@media (max-width: 768px) {
+  .listproduct-header,
+  .listproduct-row {
+    grid-template-columns: 0.7fr 1fr 1fr 1fr;
+    font-size: 14px;
+  }
+
+  .listproduct-header p:nth-child(3),
+  .listproduct-header p:nth-child(4),
+  .listproduct-header p:nth-child(5),
+  .listproduct-row p:nth-child(3),
+  .listproduct-row p:nth-child(4),
+  .listproduct-row p:nth-child(5) {
+    display: none;
+  }
+
+  .listproduct-row img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .list-product h2 {
+    font-size: 22px;
+  }
+
+  .listproduct-remove-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+
+/* 📲 For mobile (≤480px) */
+@media (max-width: 480px) {
+  .listproduct-header,
+  .listproduct-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 13px;
+  }
+
+  .listproduct-header p:nth-child(1),
+  .listproduct-row p:nth-child(1) {
+    display: none; /* hide ID */
+  }
+
+  .listproduct-row img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .list-product h2 {
+    font-size: 20px;
+  }
+
+  .listproduct-remove-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+/* 🪶 Subtle scrollbar style (for overflow) */
+.listproduct-all::-webkit-scrollbar {
+  height: 6px;
+}
+
+.listproduct-all::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 10px;
+}
+
+.listproduct-all::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}

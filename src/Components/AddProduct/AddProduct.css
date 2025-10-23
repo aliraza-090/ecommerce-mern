@@ -1,15 +1,15 @@
 /* Container */
 .add-product {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 25px;
+  max-width: 900px; /* Slightly wider for laptops/PCs */
+  margin: 20px auto;
+  padding: 20px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px; /* Reduced for smaller screens */
 }
 
 /* Each field wrapper */
@@ -20,22 +20,27 @@
 
 /* Labels */
 .addproduct-itemfield p {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 500;
   color: #182848;
-  font-size: 15px;
+  font-size: 14px; /* Slightly smaller for mobile readability */
 }
 
-/* Inputs */
-.addproduct-itemfield input[type="text"] {
-  padding: 10px 15px;
+/* Inputs (for text and number) */
+.addproduct-itemfield input[type="text"],
+.addproduct-itemfield input[type="number"] {
+  padding: 10px 12px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.2s ease;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Prevent padding issues */
 }
 
-.addproduct-itemfield input[type="text"]:focus {
+/* Focus styles */
+.addproduct-itemfield input[type="text"]:focus,
+.addproduct-itemfield input[type="number"]:focus {
   border-color: #4b6cb7;
   outline: none;
   box-shadow: 0 0 5px rgba(75, 108, 183, 0.3);
@@ -44,9 +49,10 @@
 /* Price wrapper */
 .addproduct-price {
   display: flex;
-  gap: 20px;
+  gap: 16px;
 }
 
+/* Ensure price fields are equal width */
 .addproduct-price .addproduct-itemfield {
   flex: 1;
 }
@@ -59,6 +65,8 @@
   font-size: 14px;
   background-color: #ffffff;
   transition: all 0.2s ease;
+  width: 100%; /* Full width for consistency */
+  box-sizing: border-box;
 }
 
 .add-product-selector:focus {
@@ -69,8 +77,8 @@
 
 /* Upload area */
 .addproduct-thumnail-img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   border: 2px dashed #d1d5db;
   border-radius: 12px;
@@ -86,15 +94,16 @@
 /* Add button */
 .addproduct-btn {
   margin-top: 12px;
-  padding: 12px 25px;
+  padding: 12px 20px;
   background-color: #4b6cb7;
   color: #ffffff;
   font-weight: 500;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
   transition: all 0.2s ease;
+  touch-action: manipulation; /* Better touch support */
 }
 
 .addproduct-btn:hover {
@@ -102,10 +111,118 @@
   transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Message display */
+.addproduct-message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Responsive Design */
+
+/* Small phones (e.g., iPhone SE, Tecno Spark, low-end Androids < 360px) */
+@media (max-width: 360px) {
+  .add-product {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .addproduct-itemfield p {
+    font-size: 12px;
+  }
+
+  .addproduct-itemfield input[type="text"],
+  .addproduct-itemfield input[type="number"],
+  .add-product-selector {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
   .addproduct-price {
     flex-direction: column;
+    gap: 12px;
+  }
+
+  .addproduct-thumnail-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .addproduct-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .addproduct-message {
+    font-size: 12px;
+  }
+}
+
+/* Medium phones (e.g., iPhone 12/13, Vivo Y-series, Oppo A-series, Huawei Nova, 360px–480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .add-product {
+    margin: 15px;
+    padding: 18px;
+  }
+
+  .addproduct-itemfield p {
+    font-size: 13px;
+  }
+
+  .addproduct-itemfield input[type="text"],
+  .addproduct-itemfield input[type="number"],
+  .add-product-selector {
+    font-size: 13px;
+    padding: 9px 11px;
+  }
+
+  .addproduct-price {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .addproduct-thumnail-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .addproduct-btn {
+    width: 100%;
+    padding: 11px;
+    font-size: 14px;
+  }
+
+  .addproduct-message {
+    font-size: 13px;
+  }
+}
+
+/* Large phones and small tablets (e.g., iPhone 14 Pro Max, Vivo X-series, Oppo Reno, Galaxy phones, 481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .add-product {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .addproduct-itemfield p {
+    font-size: 14px;
+  }
+
+  .addproduct-itemfield input[type="text"],
+  .addproduct-itemfield input[type="number"],
+  .add-product-selector {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .addproduct-price {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .addproduct-thumnail-img {
@@ -116,5 +233,117 @@
   .addproduct-btn {
     width: 100%;
     padding: 12px;
+    font-size: 14px;
+  }
+
+  .addproduct-message {
+    font-size: 14px;
+  }
+}
+
+/* Tablets (e.g., iPad, Huawei MatePad, Samsung Galaxy Tab, 769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .add-product {
+    max-width: 700px;
+    padding: 25px;
+  }
+
+  .addproduct-itemfield p {
+    font-size: 15px;
+  }
+
+  .addproduct-itemfield input[type="text"],
+  .addproduct-itemfield input[type="number"],
+  .add-product-selector {
+    font-size: 15px;
+    padding: 11px 14px;
+  }
+
+  .addproduct-price {
+    flex-direction: row; /* Side-by-side for tablets */
+    gap: 20px;
+  }
+
+  .addproduct-thumnail-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .addproduct-btn {
+    width: auto; /* Button fits content */
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+
+  .addproduct-message {
+    font-size: 15px;
+  }
+}
+
+/* Laptops and PCs (e.g., MacBook, Windows laptops, desktops, >1024px) */
+@media (min-width: 1025px) {
+  .add-product {
+    max-width: 900px;
+    padding: 30px;
+  }
+
+  .addproduct-itemfield p {
+    font-size: 16px;
+  }
+
+  .addproduct-itemfield input[type="text"],
+  .addproduct-itemfield input[type="number"],
+  .add-product-selector {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+
+  .addproduct-price {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .addproduct-thumnail-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .addproduct-btn {
+    width: auto;
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .addproduct-message {
+    font-size: 16px;
+  }
+}
+
+/* High-density displays (Retina, AMOLED on iPhones, Vivo, Oppo, etc.) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .addproduct-thumnail-img {
+    image-rendering: crisp-edges; /* Sharper images */
+  }
+
+  .addproduct-itemfield input[type="text"],
+  .addproduct-itemfield input[type="number"],
+  .add-product-selector,
+  .addproduct-btn {
+    font-weight: 400; /* Slightly lighter for clarity on high-res screens */
+  }
+}
+
+/* Touch devices (ensure tap targets are large enough) */
+@media (hover: none) and (pointer: coarse) {
+  .addproduct-btn,
+  .addproduct-thumnail-img {
+    min-height: 44px; /* Minimum tap target size for mobile */
+    min-width: 44px;
+  }
+
+  .addproduct-itemfield input[type="text"],
+  .addproduct-itemfield input[type="number"],
+  .add-product-selector {
+    min-height: 44px; /* Better touch targets */
   }
 }
