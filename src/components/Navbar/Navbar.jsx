@@ -1,17 +1,37 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 import cart from '../assets/cart_icon.png';
 import dropdown_icon from '../assets/dropdown_icon.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShopContext } from '../../contexts/ShopContext';
 
 const Navbar = () => {
   const [menu, setMenu] = useState('shop');
   const { getTotalCartItems } = useContext(ShopContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const menuRef = useRef();
   const dropdownRef = useRef();
+  const navigate = useNavigate();
+
+  // 🧠 Check login status on mount
+  useEffect(() => {
+    const token = localStorage.getItem('auth-token');
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  // 🔒 Logout function
+  const handleLogout = () => {
+    localStorage.removeItem('auth-token');
+    setIsLoggedIn(false);
+    alert('You have been logged out.');
+    navigate('/'); // redirect to home page
+  };
 
   const toggleDropdown = () => {
     menuRef.current.classList.toggle('nav-menu-visible');
@@ -54,9 +74,17 @@ const Navbar = () => {
       </ul>
 
       <div className="nav-login-cart">
-        <Link to="/login">
-          <button>Login</button>
-        </Link>
+        {/* 🧾 Conditionally render Login or Logout */}
+        {isLoggedIn ? (
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
+        ) : (
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+        )}
+
         <Link to="/cart">
           <img src={cart} alt="cart icon" />
         </Link>
