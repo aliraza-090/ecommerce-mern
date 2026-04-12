@@ -1,0 +1,148 @@
+.new-collection {
+  width: 100%;
+  padding: 50px 5%;
+  background: linear-gradient(135deg, #f8f9fb, #e6ebf0);
+  text-align: center;
+}
+
+.new-collection h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 25px;
+  justify-content: center;
+  align-items: start;
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .collection-grid {
+    grid-template-columns: 1fr; /* 1 item per row */
+  }
+}
+
+.collection-item {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.collection-item img {
+  width: 100%;
+  height: 250px; /* consistent height for all items */
+  object-fit: cover;
+}
+
+.collection-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.collection-item p {
+  margin: 15px 0 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  padding: 0 10px;
+
+  /* Long names handled */
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: visible;
+  text-align: left;
+  min-height: 50px;
+}
+
+.item-prices {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 15px;
+}
+
+.item-price-new {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.item-price-old {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* -------------------- RESPONSIVE ADJUSTMENTS -------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .new-collection h1 {
+    font-size: 2.2rem;
+  }
+  .collection-item p {
+    font-size: 0.95rem;
+  }
+  .item-price-new {
+    font-size: 1.1rem;
+  }
+  .item-price-old {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .new-collection h1 {
+    font-size: 1.8rem;
+  }
+  .collection-item img {
+    height: 220px;
+  }
+  .collection-item p {
+    font-size: 0.9rem;
+  }
+  .item-price-new {
+    font-size: 1rem;
+  }
+  .item-price-old {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .new-collection h1 {
+    font-size: 1.5rem;
+  }
+  .collection-item img {
+    height: 180px;
+  }
+  .collection-item p {
+    font-size: 0.85rem;
+  }
+  .item-price-new {
+    font-size: 0.95rem;
+  }
+  .item-price-old {
+    font-size: 0.85rem;
+  }
+}

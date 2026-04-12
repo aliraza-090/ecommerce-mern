@@ -1,0 +1,136 @@
+.shop-category {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 5%;
+}
+
+/* Banner */
+.category-banner {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Index / Sort */
+.shop-category-indexSort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+  flex-wrap: wrap;
+}
+
+.shop-category-indexSort span {
+  font-weight: 500;
+}
+
+.shop-categorySort {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.shop-categorySort img {
+  width: 14px;
+  height: 14px;
+}
+
+/* Product Grid */
+.shopcategory-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.shopcategory-products > * {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shopcategory-products > *:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Explore More Button */
+.explore-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.explore-more-btn {
+  background-color: #ff4c24;
+  color: white;
+  font-size: 14px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.explore-more-btn:hover {
+  background-color: #e04320;
+  transform: scale(1.05);
+}
+
+/* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .shopcategory-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .shopcategory-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .shop-category-indexSort {
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+  .shop-categorySort img {
+    width: 12px;
+    height: 12px;
+  }
+  .explore-more-btn {
+    font-size: 13px;
+    padding: 7px 16px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .shopcategory-products {
+    grid-template-columns: 1fr;
+  }
+  .shop-category-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  .shop-categorySort img {
+    width: 10px;
+    height: 10px;
+  }
+  .explore-more-btn {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+}
