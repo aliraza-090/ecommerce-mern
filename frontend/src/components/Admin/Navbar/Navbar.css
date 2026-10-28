@@ -1,0 +1,46 @@
+/* Navbar.css */
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo on left, profile on right */
+  align-items: center; /* Vertical alignment */
+  padding: 10px 20px; /* Some padding around */
+  background-color: #ffffff; /* White background, can change */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+/* Logo image */
+.navbar img:first-child {
+  height: 50px; /* Adjust logo size */
+  width: auto;
+}
+
+/* Profile image */
+.navbar img:last-child {
+  height: 40px; /* Profile icon size */
+  width: 40px;
+  border-radius: 50%; /* Makes profile round */
+  cursor: pointer; /* Pointer on hover */
+  transition: transform 0.2s;
+}
+
+.navbar img:last-child:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Responsive: adjust padding for small screens */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 12px;
+  }
+
+  .navbar img:first-child {
+    height: 40px;
+  }
+
+  .navbar img:last-child {
+    height: 35px;
+    width: 35px;
+  }
+}

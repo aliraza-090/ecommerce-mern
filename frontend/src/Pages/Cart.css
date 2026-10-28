@@ -1,0 +1,17 @@
+.cart-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f9f9;
+  padding: 40px 10%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.cart-page h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 10px;
+}

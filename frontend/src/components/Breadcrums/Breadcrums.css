@@ -1,0 +1,70 @@
+/* Breadcrums.css */
+.breadcrum {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 20px 5%;
+}
+
+.breadcrum img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  margin: 0 6px;
+  filter: brightness(0.6); /* Slightly grey arrow */
+}
+
+/* Hover effect for breadcrumb links (if clickable later) */
+.breadcrum span {
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.2s ease;
+}
+
+.breadcrum span:hover {
+  color: #ff4141;
+}
+
+/* Responsive for tablets */
+@media (max-width: 1024px) {
+  .breadcrum {
+    font-size: 13px;
+    gap: 5px;
+  }
+  .breadcrum img {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+  }
+}
+
+/* Responsive for small tablets / large phones */
+@media (max-width: 768px) {
+  .breadcrum {
+    font-size: 12px;
+    margin: 15px 5%;
+  }
+  .breadcrum img {
+    width: 9px;
+    height: 9px;
+    margin: 0 3px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .breadcrum {
+    font-size: 11px;
+    margin: 10px 5%;
+  }
+  .breadcrum img {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+  }
+}

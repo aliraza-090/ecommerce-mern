@@ -1,0 +1,133 @@
+.offer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #ede0e0, #f8eaea);
+  padding: 60px 10%;
+  margin: 110px auto;
+  border-radius: 20px;
+}
+
+/* LEFT SIDE */
+.offer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 50%;
+}
+
+.offer-left h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 700;
+  color: #222;
+}
+
+.offer-left p {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.offer-left button {
+  background-color: #ff4141;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.offer-left button:hover {
+  background-color: #e03737;
+}
+
+/* RIGHT SIDE IMAGE */
+.offer-right img {
+  max-width: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* -------------------- RESPONSIVE MEDIA QUERIES -------------------- */
+
+/* Laptops / smaller desktops */
+@media (max-width: 1200px) {
+  .offer-left h1 {
+    font-size: 2.2rem;
+  }
+  .offer-left p {
+    font-size: 0.95rem;
+  }
+  .offer-left button {
+    font-size: 0.95rem;
+    padding: 11px 22px;
+  }
+  .offer-right img {
+    max-width: 400px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .offer-left h1 {
+    font-size: 2rem;
+  }
+  .offer-left p {
+    font-size: 0.9rem;
+  }
+  .offer-left button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  .offer-right img {
+    max-width: 350px;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .offer {
+    flex-direction: column;
+    padding: 40px 5%;
+    text-align: center;
+    gap: 30px;
+  }
+  .offer-left {
+    max-width: 100%;
+    align-items: center;
+  }
+  .offer-left h1 {
+    font-size: 1.8rem;
+  }
+  .offer-left p {
+    font-size: 0.85rem;
+  }
+  .offer-left button {
+    font-size: 0.85rem;
+    padding: 9px 18px;
+  }
+  .offer-right img {
+    max-width: 300px;
+    margin-top: 15px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .offer-left h1 {
+    font-size: 1.5rem;
+  }
+  .offer-left p {
+    font-size: 0.8rem;
+  }
+  .offer-left button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+  .offer-right img {
+    max-width: 250px;
+  }
+}
